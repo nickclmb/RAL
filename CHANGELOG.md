@@ -1,3 +1,5 @@
+MAJOR
+- Fixes for dart 2.0 DDC
 # Changelog
 
 ## 1.18.0

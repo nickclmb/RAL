@@ -1,6 +1,8 @@
-import 'package:RAL/html_i.dart' as interface;
+import 'dart:core';
 
-class Storage implements interface.Storage{
+import 'package:RAL/html_i.dart' as i;
+
+class Storage implements i.Storage{
 
   @override
   String operator [](Object key) {
@@ -66,4 +68,43 @@ class Storage implements interface.Storage{
   // TODO: implement values
   @override
   Iterable<String> get values => null;
+
+  @override
+  void addEntries(Iterable<MapEntry<String, String>> newEntries) {
+    // TODO: implement addEntries
+  }
+
+  @override
+  Map<RK, RV> cast<RK, RV>() {
+    // TODO: implement cast
+  }
+
+  // TODO: implement entries
+  @override
+  Iterable<MapEntry<String, String>> get entries => null;
+
+  @override
+  Map<K2, V2> map<K2, V2>(MapEntry<K2, V2> Function(String key, String value) f) {
+    // TODO: implement map
+  }
+
+  @override
+  void removeWhere(bool Function(String key, String value) predicate) {
+    // TODO: implement removeWhere
+  }
+
+  @override
+  Map<RK, RV> retype<RK, RV>() {
+    // TODO: implement retype
+  }
+
+  @override
+  String update(String key, String Function(String value) update, {String Function() ifAbsent}) {
+    // TODO: implement update
+  }
+
+  @override
+  void updateAll(String Function(String key, String value) update) {
+    // TODO: implement updateAll
+  }
 }

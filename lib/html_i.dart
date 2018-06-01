@@ -1,6 +1,8 @@
 library platform.interface.html;
 
 import 'dart:async';
+import 'dart:core';
+import 'dart:core';
 import 'dart:math';
 Window get window => null;
 Document get document => null;
@@ -530,7 +532,7 @@ class CssClassSet implements Set<String> {
   }
 
   @override
-  Iterable<T> expand<T>(Iterable<T> f(element)) {
+  Iterable<T> expand<T>(Iterable<T> f(String element)) {
     throw new UnimplementedError();
   }
 
@@ -539,11 +541,6 @@ class CssClassSet implements Set<String> {
 
   @override
   String firstWhere(bool test(String element), {String orElse()}) {
-    throw new UnimplementedError();
-  }
-
-  @override
-  T fold<T>(T initialValue, T combine(T previousValue, element)) {
     throw new UnimplementedError();
   }
 
@@ -588,7 +585,7 @@ class CssClassSet implements Set<String> {
   }
 
   @override
-  Iterable<T> map<T>(T f(e)) {
+  Iterable<T> map<T>(T f(String e)) {
     throw new UnimplementedError();
   }
 
@@ -621,7 +618,7 @@ class CssClassSet implements Set<String> {
   String get single => null;
 
   @override
-  String singleWhere(bool test(String element)) {
+  String singleWhere(bool test(String element), {orElse}) {
     throw new UnimplementedError();
   }
 
@@ -663,6 +660,31 @@ class CssClassSet implements Set<String> {
   @override
   Iterable<String> where(bool test(String element)) {
     throw new UnimplementedError();
+  }
+
+  @override
+  Set<R> cast<R>() {
+    // TODO: implement cast
+  }
+
+  @override
+  Iterable<String> followedBy(Iterable<String> other) {
+    // TODO: implement followedBy
+  }
+
+  @override
+  Set<R> retype<R>() {
+    // TODO: implement retype
+  }
+
+  @override
+  Iterable<T> whereType<T>() {
+    // TODO: implement whereType
+  }
+
+  @override
+  T fold<T>(T initialValue, T Function(T previousValue, String element) combine) {
+    // TODO: implement fold
   }
 }
 

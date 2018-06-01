@@ -1,8 +1,8 @@
 import 'dart:async';
-import 'package:RAL/html_i.dart' as interface;
+import 'package:RAL/html_i.dart' as i;
 import 'package:RAL/io/html/src/storage.dart';
 
-class Window implements interface.Window {
+class Window implements i.Window {
   static final Window _window = new Window._internal();
 
   factory Window() {
@@ -11,18 +11,18 @@ class Window implements interface.Window {
 
   Window._internal();
 
-  static final interface.Location _location = new Location();
-  static final interface.Navigator _navigator = new Navigator();
+  static final i.Location _location = new Location();
+  static final i.Navigator _navigator = new Navigator();
 
   Location get location => _location;
 
   Navigator get navigator => _navigator;
 
-  interface.Storage get localStorage => new Storage();
+  i.Storage get localStorage => new Storage();
 
-  interface.Storage get sessionStorage => new Storage();
+  i.Storage get sessionStorage => new Storage();
 
-  interface.Document get document => null;
+  i.Document get document => null;
 
   void open(String url, String target, [String features]) => null;
 
@@ -30,19 +30,19 @@ class Window implements interface.Window {
   double devicePixelRatio;
 
   @override
-  Stream<interface.Event> onResize;
+  Stream<i.Event> onResize;
 
   // TODO: implement animationFrame
   @override
   Future<num> get animationFrame => null;
 }
 
-class Navigator implements interface.Navigator {
+class Navigator implements i.Navigator {
 
   String get userAgent => '';
 }
 
-class Location implements interface.Location{
+class Location implements i.Location{
 
   String get hash => '';
 
